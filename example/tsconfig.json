@@ -1,0 +1,10 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "expo-rust-demo-module": ["../src/index"],
+      "expo-rust-demo-module/*": ["../src/*"]
+    }
+  }
+}
