@@ -34,3 +34,10 @@ clean:
 
 format:
 	cargo fmt
+
+prepare-apple:
+	rustup target add aarch64-apple-ios
+	rustup target add aarch64-apple-ios-sim
+
+prepare-android:
+	rustup target add aarch64-linux-android
