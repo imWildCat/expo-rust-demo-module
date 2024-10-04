@@ -19,11 +19,15 @@ xcframework-ios:
     -library $(GIT_ROOT)/rust/target/aarch64-apple-ios-sim/debug/$(LIB_NAME).a -headers $(GIT_ROOT)/ios/generated/headers \
     -output $(GIT_ROOT)/ios/generated/ExpoRustDemoModuleFFI.xcframework
 
+all-ios: build-ios xcframework-ios gen-bindings-ios
+
 build-android:
 	cargo ndk --no-strip -t arm64-v8a -o $(GIT_ROOT)/android/src/main/jniLibs build -q
 	
 gen-bindings-android:
 	cargo run -p uniffi-builder --features=uniffi/cli --bin uniffi-bindgen generate --language kotlin --out-dir $(GIT_ROOT)/android/src/main/java --no-format --library $(GIT_ROOT)/android/src/main/jniLibs/arm64-v8a/libexpo_rust_demo_module.so
+
+all-android: build-android gen-bindings-android
 
 clean:
 	cargo clean
