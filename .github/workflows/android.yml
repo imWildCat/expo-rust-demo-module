@@ -25,7 +25,7 @@ jobs:
         cache: gradle
 
     - name: Build Rust
-      run: cd rust/expo_rust_demo_module && make prepare-android && make prepare-android && make all-android
+      run: cd rust/expo_rust_demo_module && make prepare-android-cargo-ndk && make prepare-android && make all-android
   
     - name: Build Android example project
       run: |
