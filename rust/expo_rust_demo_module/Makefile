@@ -9,7 +9,8 @@ build-ios:
 
 gen-bindings-ios:
 	cargo run -p uniffi-builder --features=uniffi/cli --bin uniffi-bindgen generate --language swift --out-dir $(GIT_ROOT)/ios/generated/headers --no-format --library $(GIT_ROOT)/rust/target/aarch64-apple-ios/debug/libexpo_rust_demo_module.dylib
-	mv $(GIT_ROOT)/ios/generated/headers/*.swift $(GIT_ROOT)/ios/generated/
+	mv $(GIT_ROOT)/ios/generated/headers/ExpoRustDemoModule.swift $(GIT_ROOT)/ios/generated/ExpoRustDemoModuleRustBridge.swift
+	mv $(GIT_ROOT)/ios/generated/headers/ExpoRustDemoModuleFFI.modulemap $(GIT_ROOT)/ios/generated/headers/module.modulemap
 
 xcframework-ios:
 	rm -rf $(GIT_ROOT)/ios/generated/ExpoRustDemoModuleFFI.xcframework || true
