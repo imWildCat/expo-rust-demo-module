@@ -4,7 +4,7 @@
 
 > To reduce the friction and cost of developing native apps, we need a way to run Rust code in React Native.
 > Expo has done a lot of work to make writing bindings between Swift/Kotlin and TypeScript easier.
-> Meanwhile, Mozilla has been working on [uniffi-rs](https://github.com/uniffi/uniffi-rs) to make it easier to write bindings between Rust and Swift/Kotlin.
+> Meanwhile, Mozilla has been working on [uniffi-rs](https://github.com/mozilla/uniffi-rs) to make it easier to write bindings between Rust and Swift/Kotlin.
 >
 > This project is connecting the dots between Expo and Rust.
 
