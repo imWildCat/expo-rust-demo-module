@@ -32,4 +32,4 @@ jobs:
         GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dorg.gradle.parallel=true"
       run: |
         cd example/android
-        ./gradlew build --no-daemon --max-workers 2
+        ./gradlew assembleDebug --no-daemon --max-workers 2
