@@ -16,6 +16,8 @@ jobs:
     - uses: actions/checkout@v4
     - name: Expo Module scripts
       run: | 
+        npm -v
+        node -v
         npm install
         npm run prepare
     - name: Build Rust
