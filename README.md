@@ -12,7 +12,7 @@ A demo project showcasing the integration of Expo and Rust with automatic bindin
 
 ## About me
 
-Long-term cross-platform enusiastic living in Canada, previously Senior Software Engineer at Microsoft.
+Long-term cross-platform enusiastic living in Canada, previously Senior Software Engineer at Microsoft, working on Outlook Mobile and OneDrive Photos.
 
 Open for roles as Web / Mobile dev.
 
