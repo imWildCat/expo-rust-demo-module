@@ -41,3 +41,6 @@ prepare-apple:
 
 prepare-android:
 	rustup target add aarch64-linux-android
+
+prepare-android-cargo-ndk:
+	cargo install cargo-ndk
