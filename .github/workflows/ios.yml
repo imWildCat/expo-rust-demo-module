@@ -1,0 +1,24 @@
+
+name: Swift
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build Rust
+      run: cd rust/expo_rust_demo_module && make all-ios
+    - name: Build iOS example project
+      run: |
+        npm install
+        cd example
+        pod install
+        xcodebuild -workspace exporustdemomoduleexample.xcworkspace -scheme example -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Debug build
