@@ -1,0 +1,31 @@
+GIT_ROOT := $(shell git rev-parse --show-toplevel)
+
+MODULE_NAME := expo_rust_demo_module
+LIB_NAME := libexpo_rust_demo_module
+
+build-ios:
+	cargo build --target aarch64-apple-ios
+	cargo build --target aarch64-apple-ios-sim
+
+gen-bindings-ios:
+	cargo run -p uniffi-builder --features=uniffi/cli --bin uniffi-bindgen generate --language swift --out-dir $(GIT_ROOT)/ios/generated/headers --no-format --library $(GIT_ROOT)/rust/target/aarch64-apple-ios/debug/libexpo_rust_demo_module.dylib
+	mv $(GIT_ROOT)/ios/generated/headers/*.swift $(GIT_ROOT)/ios/generated/
+
+xcframework-ios:
+	rm -rf $(GIT_ROOT)/ios/generated/ExpoRustDemoModuleFFI.xcframework || true
+	xcodebuild -create-xcframework \
+    -library $(GIT_ROOT)/rust/target/aarch64-apple-ios/debug/$(LIB_NAME).a -headers $(GIT_ROOT)/ios/generated/headers \
+    -library $(GIT_ROOT)/rust/target/aarch64-apple-ios-sim/debug/$(LIB_NAME).a -headers $(GIT_ROOT)/ios/generated/headers \
+    -output $(GIT_ROOT)/ios/generated/ExpoRustDemoModuleFFI.xcframework
+
+build-android:
+	cargo build --target aarch64-linux-android
+
+gen-bindings-android:
+	cargo run -p uniffi-builder --features=uniffi/cli --bin uniffi-bindgen generate --language kotlin --out-dir $(GIT_ROOT)/android/app/src/main/kotlin/expo/modules/rustdemomodule --no-format
+
+clean:
+	cargo clean
+
+format:
+	cargo fmt

@@ -1,0 +1,9 @@
+namespace = "ExpoRustDemoModule"
+
+[bindings.kotlin]
+package_name = "expo.modules.rustdemomodule"
+cdylib_name = "expo_rust_demo_module"
+
+[bindings.swift]
+cdylib_name = "expo_rust_demo_module"
+module_name = "ExpoRustDemoModule"
