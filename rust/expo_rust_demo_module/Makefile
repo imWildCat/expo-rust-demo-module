@@ -20,10 +20,10 @@ xcframework-ios:
     -output $(GIT_ROOT)/ios/generated/ExpoRustDemoModuleFFI.xcframework
 
 build-android:
-	cargo build --target aarch64-linux-android
-
+	cargo ndk --no-strip -t arm64-v8a -o $(GIT_ROOT)/android/src/main/jniLibs build -q
+	
 gen-bindings-android:
-	cargo run -p uniffi-builder --features=uniffi/cli --bin uniffi-bindgen generate --language kotlin --out-dir $(GIT_ROOT)/android/app/src/main/kotlin/expo/modules/rustdemomodule --no-format
+	cargo run -p uniffi-builder --features=uniffi/cli --bin uniffi-bindgen generate --language kotlin --out-dir $(GIT_ROOT)/android/src/main/java --no-format --library $(GIT_ROOT)/android/src/main/jniLibs/arm64-v8a/libexpo_rust_demo_module.so
 
 clean:
 	cargo clean
