@@ -28,6 +28,8 @@ jobs:
       run: cd rust/expo_rust_demo_module && make prepare-android-cargo-ndk && make prepare-android && make all-android
   
     - name: Build Android example project
+      env:
+        GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dorg.gradle.parallel=true"
       run: |
         cd example/android
-        ./gradlew build
+        ./gradlew build --no-daemon --max-workers 2
