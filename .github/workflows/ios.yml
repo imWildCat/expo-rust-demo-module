@@ -14,6 +14,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Expo Module scripts
+      run: | 
+        npm install
+        npm run prepare
     - name: Build Rust
       run: cd rust/expo_rust_demo_module && make prepare-apple && make all-ios
     - name: Build iOS example project
