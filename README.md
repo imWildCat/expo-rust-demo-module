@@ -10,6 +10,14 @@
 
 A demo project showcasing the integration of Expo and Rust with automatic binding generation using uniffi-rs. Write once using TypeScript and Rust, run everywhere!
 
+## About me
+
+Long-term cross-platform enusiastic living in Canada, previously Senior Software Engineer at Microsoft.
+
+Open for roles as Web / Mobile dev.
+
+Contact me at: <https://github.com/imWildCat>
+
 ## Features
 
 - Seamless integration of Rust code in Expo projects
