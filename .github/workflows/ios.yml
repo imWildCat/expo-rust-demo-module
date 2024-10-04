@@ -28,4 +28,4 @@ jobs:
         npm install
         cd ios
         pod install
-        xcodebuild -workspace exporustdemomoduleexample.xcworkspace -scheme example -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Debug build
+        xcodebuild -workspace exporustdemomoduleexample.xcworkspace -scheme exporustdemomoduleexample -destination 'platform=iOS Simulator,name=iPhone 15' -configuration Debug build
