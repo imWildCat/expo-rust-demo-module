@@ -32,6 +32,10 @@ public class ExpoRustDemoModule: Module {
       ])
     }
 
+    Function("addInRust") { (a: Int, b: Int) in
+      return addInRust(left: Int64(a), right: Int64(b))
+    }
+
     // Enables the module to be used as a native view. Definition components that are accepted as part of the
     // view definition: Prop, Events.
     View(ExpoRustDemoModuleView.self) {

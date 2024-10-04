@@ -1,4 +1,5 @@
-pub fn add_in_rust(left: u64, right: u64) -> u64 {
+#[uniffi::export]
+pub fn add_in_rust(left: i64, right: i64) -> i64 {
     left + right
 }
 
