@@ -19,7 +19,7 @@ xcframework-ios:
     -library $(GIT_ROOT)/rust/target/aarch64-apple-ios-sim/debug/$(LIB_NAME).a -headers $(GIT_ROOT)/ios/generated/headers \
     -output $(GIT_ROOT)/ios/generated/ExpoRustDemoModuleFFI.xcframework
 
-all-ios: build-ios xcframework-ios gen-bindings-ios
+all-ios: build-ios gen-bindings-ios xcframework-ios
 
 build-android:
 	cargo ndk --no-strip -t arm64-v8a -o $(GIT_ROOT)/android/src/main/jniLibs build -q
