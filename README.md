@@ -19,9 +19,9 @@ A demo project showcasing the integration of Expo and Rust with automatic bindin
 
 ## Screenshots
 
-<img src="https://github.com/user-attachments/assets/aa21639e-6ea4-4044-9f13-979e69a57db7" alt="rust demo - Google Pixel 3" width="250">
-
-<img src="https://github.com/user-attachments/assets/5c095c0e-8363-44d3-bbf6-03d4a96e88a2" alt="rust demo - iPhone 15" width="300">
+| Android                                                                                                                                  | iOS                                                                                                                                 |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://github.com/user-attachments/assets/aa21639e-6ea4-4044-9f13-979e69a57db7" alt="rust demo - Google Pixel 3" width="250"> | <img src="https://github.com/user-attachments/assets/5c095c0e-8363-44d3-bbf6-03d4a96e88a2" alt="rust demo - iPhone 15" width="330"> |
 
 ## Getting Started
 
