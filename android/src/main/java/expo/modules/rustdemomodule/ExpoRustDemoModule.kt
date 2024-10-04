@@ -26,6 +26,11 @@ class ExpoRustDemoModule : Module() {
       "Hello world! 👋"
     }
 
+    // Replace the existing addInRust function
+    Function("addInRust") { a: Long, b: Long ->
+      addInRust(a, b)
+    }
+
     // Defines a JavaScript function that always returns a Promise and whose native code
     // is by default dispatched on the different thread than the JavaScript runtime runs on.
     AsyncFunction("setValueAsync") { value: String ->
@@ -33,10 +38,6 @@ class ExpoRustDemoModule : Module() {
       sendEvent("onChange", mapOf(
         "value" to value
       ))
-    }
-
-    Function("addInRust") { a: Int, b: Int ->
-      addInRust(a, b)
     }
 
     // Enables the module to be used as a native view. Definition components that are accepted as part of
